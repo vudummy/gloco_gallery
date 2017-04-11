@@ -15,7 +15,7 @@ export default class App extends React.Component {
     // Fetch first 25 photos
     fetch('http://jsonplaceholder.typicode.com/photos', { method: 'get' }).then(
       response => response.json().then(
-        res => this.setState({ photos: _.filter(x => x.id < 26, res) })
+        res => this.setState({ photos: _.filter(img => img.id < 26, res) })
       )
     ).catch(err => console.error(err))
   }

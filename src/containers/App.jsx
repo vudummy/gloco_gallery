@@ -11,26 +11,17 @@ export default class App extends React.Component {
     this.state = { photos: [], hasMore: true }
   }
 
-  componentDidMount() {
-    // For demonstration purpose, lets use a Fake Rest API for resource-fetching (http://jsonplaceholder.typicode.com/)
-    // Fetch first 25 photos when done mounting
-    fetch('http://jsonplaceholder.typicode.com/photos', { method: 'get' }).then(
-      response => response.json().then(
-        res => this.setState({ photos: _.filter(img => img.id < 26, res) })
-      )
-    ).catch(err => console.error(err))
-  }
-
   loadMoreImg() {
     const { photos } = this.state
     const { length } = photos
-    if (photos.length === 1) return
     fetch('http://jsonplaceholder.typicode.com/photos', { method: 'get' }).then(
       response => response.json().then(
         res => {
-          const nextSetOfImg = _.filter(img => img.id > length && img.id < (length + 25), res)
-          this.setState({ photos: photos.concat(nextSetOfImg) })
-          if (length > 105) this.setState({ hasMore: false })
+          const nextSetOfImg = res.filter(img => img.id > length && img.id < (length + 26))
+          setTimeout(() => this.setState({
+            photos: _.take(105 ,photos.concat(nextSetOfImg)),
+            hasMore: !(length > 104)
+          }), 150)
         }
       )
     ).catch(err => console.error(err))

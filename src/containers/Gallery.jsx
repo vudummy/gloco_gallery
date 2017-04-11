@@ -1,8 +1,12 @@
 import React from 'react'
+import ImageBox from '../components/ImageBox.jsx'
 
-const Gallery = () => (
+const Gallery = ({ photos }) => (
   <div>
-    stuffs...  
+    <h2>
+      stuffs...  
+    </h2>
+    {photos.map(image => <ImageBox image={image} key={image.id} />)}
   </div>
 )
 

@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -20,5 +21,6 @@ module.exports = {
       { test: /\.(jpe?g|png|gif|svg)$/i, loader: "file-loader" }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [HtmlWebpackPluginConfig, new webpack.optimize.UglifyJsPlugin({ minimize: true })],
+  watch: true
 }

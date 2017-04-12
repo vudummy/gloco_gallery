@@ -5,6 +5,7 @@ import InfiniteScroll from 'react-infinite-scroller'
 import Header from './Header.jsx'
 import Gallery from './Gallery.jsx'
 import spinner from '../css/balls.svg'
+import arrow from '../css/arrow.png'
 
 export default class App extends React.Component {
   constructor() {
@@ -12,7 +13,20 @@ export default class App extends React.Component {
     this.state = { photos: [], hasMore: true }
   }
 
+  componentDidMount() {
+    fetch('http://jsonplaceholder.typicode.com/photos', { method: 'get' }).then(
+      response => response.json().then(
+        res => {
+          setTimeout(() => this.setState({
+            photos: _.take(25, res),
+          }), 150)
+        }
+      )
+    ).catch(err => console.error(err))
+  }
+
   loadMoreImg() {
+    console.info('Fetching')
     const { photos } = this.state
     const { length } = photos
     fetch('http://jsonplaceholder.typicode.com/photos', { method: 'get' }).then(
@@ -37,14 +51,15 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <Header className="ui fixed inverted menu" />
+        <Header />
         <InfiniteScroll
-          pageStart={0}  
+          pageStart={0}
+          initialLoad={false}
           loadMore={this.loadMoreImg.bind(this)}
           hasMore={this.state.hasMore}
           loader={this.loader()}
-          threshold={20}
-          className="ui main container"
+          threshold={5}
+          className="ui gallery main container"
         >
           <Gallery photos={this.state.photos} />
         </InfiniteScroll>  

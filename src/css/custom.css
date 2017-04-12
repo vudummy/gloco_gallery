@@ -1,5 +1,9 @@
 body {
-  background-color: #e1e2da
+  background-color: white
+}
+
+.gallery {
+  margin-top: 6rem;
 }
 
 .clipped {

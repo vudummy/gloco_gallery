@@ -15,12 +15,15 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.css$/, loader: "style-loader!css-loader" },
       { test: /\.(jpe?g|png|gif|svg)$/i, loader: "file-loader" }
     ]
   },
-  plugins: [HtmlWebpackPluginConfig, new webpack.optimize.UglifyJsPlugin({ minimize: true })],
+  plugins: [
+    HtmlWebpackPluginConfig,
+    new webpack.optimize.UglifyJsPlugin({ minimize: true })
+  ],
   watch: true
 }

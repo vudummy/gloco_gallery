@@ -16,11 +16,7 @@ export default class App extends React.Component {
   componentDidMount() {
     fetch('http://jsonplaceholder.typicode.com/photos', { method: 'get' }).then(
       response => response.json().then(
-        res => {
-          setTimeout(() => this.setState({
-            photos: _.take(25, res),
-          }), 150)
-        }
+        result => this.setState({ photos: _.take(25, result) })
       )
     ).catch(err => console.error(err))
   }
@@ -31,8 +27,8 @@ export default class App extends React.Component {
     const { length } = photos
     fetch('http://jsonplaceholder.typicode.com/photos', { method: 'get' }).then(
       response => response.json().then(
-        res => {
-          const nextSetOfImg = res.filter(img => img.id > length && img.id < (length + 26))
+        result => {
+          const nextSetOfImg = result.filter(img => img.id > length && img.id < (length + 26))
           setTimeout(() => this.setState({
             photos: _.take(105 ,photos.concat(nextSetOfImg)),
             hasMore: !(length > 104)

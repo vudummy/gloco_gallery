@@ -1,0 +1,8 @@
+body {
+  background-color: #e1e2da
+}
+
+.clipped {
+  -webkit-clip-path: polygon(0 0, 100% 13%, 100% 99%, 0 879%);
+  clip-path: polygon(0 0, 100% 13%, 100% 99%, 0 87%);
+}

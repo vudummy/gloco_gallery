@@ -4,6 +4,7 @@ import _ from 'lodash/fp'
 import InfiniteScroll from 'react-infinite-scroller'
 import Header from './Header.jsx'
 import Gallery from './Gallery.jsx'
+import spinner from '../css/balls.svg'
 
 export default class App extends React.Component {
   constructor() {
@@ -27,16 +28,23 @@ export default class App extends React.Component {
     ).catch(err => console.error(err))
   }
 
+  loader = () => (
+    <div className="ui container fluid">
+      <img src={spinner} className="ui centered small image"/>
+    </div>
+  )
+
   render() {
     return (
       <div>
-        <Header />
+        <Header className="ui fixed inverted menu" />
         <InfiniteScroll
           pageStart={0}  
           loadMore={this.loadMoreImg.bind(this)}
           hasMore={this.state.hasMore}
-          loader={<div className="loader">Loading ...</div>}
+          loader={this.loader()}
           threshold={20}
+          className="ui main container"
         >
           <Gallery photos={this.state.photos} />
         </InfiniteScroll>  

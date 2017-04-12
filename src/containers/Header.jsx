@@ -1,15 +1,15 @@
 import React from 'react'
 
 const Header = () => (
-  <div className="ui header stackable menu fixed over-shadow">
+  <div className="ui header stackable menu fixed">
     <a className="item borderless">
-      <i className="spy icon" />
-      <div className="title">
-        VU__TRAN
+      <i className="grey spy icon" />
+      <div className="grey title">
+        {"G L O C O </> D E M O"}
       </div>
     </a>
     <a className="item borderless">
-      <i className="cube icon" />
+      <i className="grey cube icon" />
     </a>
   </div>
 )

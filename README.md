@@ -10,7 +10,7 @@ This sample is built and bundled from ground up with following tech stacks and d
   - Fake RestAPI from [JSONPlaceholder][Fks]
   - Some dumb images from [Lorempixel][Lpx]
  
-Open package.json for details.
+Open package.json for details. 
 ...or read on!
 ## Installation
 Nothing special, just usual routine:

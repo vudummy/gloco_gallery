@@ -9,13 +9,16 @@ import arrow from '../css/arrow.png'
 export default class App extends React.Component {
   constructor() {
     super()
-    this.state = { photos: [], hasMore: true, keepLoading: true }
+    this.state = { photos: [], hasMore: true, keepLoading: false }
   }
 
   componentDidMount() {
     fetch('http://jsonplaceholder.typicode.com/photos', { method: 'get' }).then(
       response => response.json().then(
-        result => this.setState({ photos: result.slice(0, 25) })
+        result => {
+          this.setState({ photos: result.slice(0, 25) })
+          setTimeout(() => this.setState({ keepLoading: true }), 2500)
+        }
       )
     ).catch(console.error)
   }
@@ -32,8 +35,8 @@ export default class App extends React.Component {
           this.setState({
             photos: photos.concat(nextSetOfImg).slice(0, 105),
             hasMore: !(length > 104),
-            keepLoading: true
           })
+          setTimeout(() => this.setState({ keepLoading: true }), nextSetOfImg.length * 100)
         }
       )
     ).catch(console.error)

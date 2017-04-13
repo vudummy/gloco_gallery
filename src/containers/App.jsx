@@ -10,7 +10,7 @@ import arrow from '../css/arrow.png'
 export default class App extends React.Component {
   constructor() {
     super()
-    this.state = { photos: [], hasMore: true }
+    this.state = { photos: [], hasMore: true, keepLoading: true }
   }
 
   componentDidMount() {
@@ -22,17 +22,19 @@ export default class App extends React.Component {
   }
 
   loadMoreImg() {
-    console.info('Fetching')
-    const { photos } = this.state
+    const { photos, keepLoading } = this.state
     const { length } = photos
+    if (!keepLoading) return
+    this.setState({ keepLoading: false })
     fetch('http://jsonplaceholder.typicode.com/photos', { method: 'get' }).then(
       response => response.json().then(
         result => {
           const nextSetOfImg = result.filter(img => img.id > length && img.id < (length + 26))
-          setTimeout(() => this.setState({
+          this.setState({
             photos: _.take(105 ,photos.concat(nextSetOfImg)),
-            hasMore: !(length > 104)
-          }), 150)
+            hasMore: !(length > 104),
+            keepLoading: true
+          })
         }
       )
     ).catch(err => console.error(err))

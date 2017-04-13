@@ -3,8 +3,9 @@
 This is a sample Gallery modal with infinite scrolling and some slightly-cool animation on transition. One simply will never get tired of a bold entrance.
 This sample is built and bundled from ground up with following tech stacks and dependencies:
 
-  - ReactJS, oh year the React we love, version 15++
-  - Webpack, manually configured from ground up.
+  - ReactJS, oh yeah the React we love, version 15++
+  - Babel, one simply cannot live without Babel as long as he still works with ReactJS
+  - Webpack 2, manually configured from ground up.
   - Semantic-ui (gosh I hate it)
   - A third-lib called [React-infinite-scroller][RIS] by CassetteRocks
   - Fake RestAPI from [JSONPlaceholder][Fks]
@@ -31,7 +32,24 @@ $ npm run build
 ```
 For the moment, there is no code-coverage. Sorry for that. Will be implemented later.
 
-### Todos
+### Brief introduction
+For the demonstration and testing purpose, this sample is built from scratch instead of using create-react-app
+In the wake of Webpack 2 release, manual configuration of webpack can now use webpack-dev-server, a slice of express.js for setting up local testing server.
+
+To ensure familiarity, the configurations are set similar to create-react-app config, meaning:
+- ES6 Javascript
+- JS, JSX and extension-omit for import/export
+- images, css importing as usual
+
+However, differences are:
+- Html now bundled also, meaning changes in index.html shall cause webpack to hot-reload
+- I dont remember. I shall add more later should my memory works again.
+
+About React-infinite-scroller:
+- Not too cool lib, but it can get the job done quick at an acceptable level
+
+
+#### Todos
 
  - Write Tests
  - I dont know, maybe go back to sleep then?

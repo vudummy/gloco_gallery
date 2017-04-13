@@ -15,14 +15,14 @@ Open package.json for details.
 ...or read on!
 
 ## Installation
-Nothing special, just usual routine:
+Nothing special, just the usual routine:
 ```sh
 $ git clone https://github.com/vutran1710/doom_gallery
 $ cd doom_gallery
 $ yarn
 $ yarn start
 ```
-or if you just want to dig with node...
+or if you just want to stick with npm...
 ```sh
 $ npm i
 $ npm start

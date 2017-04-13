@@ -3,7 +3,11 @@ body {
 }
 
 .gallery {
-  margin-top: 4rem;
+  max-height: 80vh;
+}
+
+.ReactModal__Body--open {
+  overflow: hidden;
 }
 
 .title {

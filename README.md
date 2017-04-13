@@ -29,6 +29,10 @@ $ npm start
 ```
 optimize the bundle with:
 ```sh
+$ yarn build
+```
+or...
+```sh
 $ npm run build
 ```
 For the moment, there is no code-coverage. Sorry for that. Will be implemented later.

@@ -6,7 +6,7 @@ This sample is built and bundled from ground up with following tech stacks and d
   - ReactJS, oh year the React we love, version 15++
   - Webpack, manually configured from ground up.
   - Semantic-ui (gosh I hate it)
-  - A third-lib called "React-infinite-scroller"
+  - A third-lib called [React-infinite-scroller][RIS] by CassetteRocks
   - Fake RestAPI from [JSONPlaceholder][Fks]
   - Some dumb images from [Lorempixel][Lpx]
  
@@ -44,4 +44,5 @@ MIT
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job.)
    [Fks]: <https://jsonplaceholder.typicode.com/>
    [Lpx]: <http://lorempixel.com/>
+   [RIS]: <https://github.com/CassetteRocks/react-infinite-scroller/>
    >

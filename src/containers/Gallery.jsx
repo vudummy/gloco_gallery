@@ -1,5 +1,5 @@
 import React from 'react'
-import ImageBox from '../components/ImageBox.jsx'
+import ImageBox from '../components/ImageBox'
 import css from '../css/custom.css'
 
 const Gallery = ({ photos }) => (

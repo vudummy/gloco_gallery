@@ -16,6 +16,7 @@
     "react": "^15.5.3",
     "react-dom": "^15.5.3",
     "react-infinite-scroller": "^1.0.7",
+    "react-modal": "^1.7.6",
     "react-sticky": "^5.0.5",
     "semantic-ui-less": "^2.2.10"
   },

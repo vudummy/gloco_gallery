@@ -1,6 +1,5 @@
 import React from 'react'
 import fetch from 'isomorphic-fetch'
-import _ from 'lodash/fp'
 import InfiniteScroll from 'react-infinite-scroller'
 import Header from './Header'
 import Gallery from './Gallery'
@@ -16,9 +15,9 @@ export default class App extends React.Component {
   componentDidMount() {
     fetch('http://jsonplaceholder.typicode.com/photos', { method: 'get' }).then(
       response => response.json().then(
-        result => this.setState({ photos: _.take(25, result) })
+        result => this.setState({ photos: result.slice(0, 25) })
       )
-    ).catch(err => console.error(err))
+    ).catch(console.error)
   }
 
   loadMoreImg() {
@@ -31,13 +30,13 @@ export default class App extends React.Component {
         result => {
           const nextSetOfImg = result.filter(img => img.id > length && img.id < (length + 26))
           this.setState({
-            photos: _.take(105 ,photos.concat(nextSetOfImg)),
+            photos: photos.concat(nextSetOfImg).slice(0, 105),
             hasMore: !(length > 104),
             keepLoading: true
           })
         }
       )
-    ).catch(err => console.error(err))
+    ).catch(console.error)
   }
 
   loader = () => (

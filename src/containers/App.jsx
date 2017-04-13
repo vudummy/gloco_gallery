@@ -4,7 +4,6 @@ import InfiniteScroll from 'react-infinite-scroller'
 import Header from './Header'
 import Gallery from './Gallery'
 import spinner from '../css/balls.svg'
-import arrow from '../css/arrow.png'
 
 export default class App extends React.Component {
   constructor() {

@@ -13,6 +13,7 @@ This sample is built and bundled from ground up with following tech stacks and d
  
 Open package.json for details. 
 ...or read on!
+
 ## Installation
 Nothing special, just usual routine:
 ```sh
@@ -32,7 +33,7 @@ $ npm run build
 ```
 For the moment, there is no code-coverage. Sorry for that. Will be implemented later.
 
-### Brief introduction
+## Brief introduction
 For the demonstration and testing purpose, this sample is built from scratch instead of using create-react-app
 In the wake of Webpack 2 release, manual configuration of webpack can now use webpack-dev-server, a slice of express.js for setting up local testing server.
 
@@ -49,8 +50,7 @@ About React-infinite-scroller:
 - Not too cool lib, but it can get the job done quick at an acceptable level
 
 
-#### Todos
-
+## Todos
  - Write Tests
  - I dont know, maybe go back to sleep then?
 

@@ -1,4 +1,5 @@
-# GALLERY OF D0000000000000M
+# GALLERY DEMO
+
 
 This is a sample Gallery modal with infinite scrolling and some slightly-cool animation on transition. One simply will never get tired of a bold entrance.
 This sample is built and bundled from ground up with following tech stacks and dependencies:
@@ -8,6 +9,7 @@ This sample is built and bundled from ground up with following tech stacks and d
   - Webpack 2, manually configured from ground up.
   - Semantic-ui (gosh I hate it)
   - A third-lib called [React-infinite-scroller][RIS] by CassetteRocks
+  - Another lib [react-sticky][Rsk] to create skicky toolbar
   - Fake RestAPI from [JSONPlaceholder][Fks]
   - Some dumb images from [Lorempixel][Lpx]
  
@@ -67,4 +69,5 @@ MIT
    [Fks]: <https://jsonplaceholder.typicode.com/>
    [Lpx]: <http://lorempixel.com/>
    [RIS]: <https://github.com/CassetteRocks/react-infinite-scroller/>
+   [Rsk]: <https://github.com/captivationsoftware/react-sticky/>
    >

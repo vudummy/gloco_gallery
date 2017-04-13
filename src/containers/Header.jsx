@@ -4,10 +4,10 @@ export default class Header extends React.Component {
   scrollToTop = () => document.location.href = "#top"
   render() {
     return (
-      <div className="ui header stackable menu fixed">
+      <div className="ui header menu fixed">
         <a className="item borderless" onClick={this.scrollToTop}>
-          <i className="grey cube icon" />
-          <div className="grey title">GALLERY OF DOOM</div>
+          <i className="cube icon" />
+          <div className="title">GALLERY OF DOOM</div>
         </a>
       </div>
     )

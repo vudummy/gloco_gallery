@@ -7,7 +7,7 @@ This sample is built and bundled from ground up with following tech stacks and d
   - ReactJS, oh yeah the React we love, version 15++
   - Babel, one simply cannot live without Babel as long as he still works with ReactJS
   - Webpack 2, manually configured from ground up.
-  - Semantic-ui (gosh I hate it)
+  - Semantic-ui
   - A third-lib called [React-infinite-scroller][RIS] by CassetteRocks
   - Another lib [react-sticky][Rsk] to create skicky toolbar
   - Fake RestAPI from [JSONPlaceholder][Fks]

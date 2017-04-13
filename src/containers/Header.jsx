@@ -5,7 +5,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <div className="ui header stackable menu fixed">
-        <div className2="ui horizontal list">
+        <div className="ui horizontal list">
           <a className="item borderless" onClick={this.scrollToTop}>
             <i className="grey cube icon" />
             <div className="grey title">GALLERY OF DOOM</div>

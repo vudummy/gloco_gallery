@@ -9,7 +9,7 @@ This sample is built and bundled from ground up with following tech stacks and d
   - Webpack 2, manually configured from ground up.
   - Semantic-ui
   - A third-lib called [React-infinite-scroller][RIS] by CassetteRocks
-  - Another lib [react-sticky][Rsk] to create skicky toolbar
+  - Another lib called [React-sticky][Rsk] to create skicky toolbar
   - Fake RestAPI from [JSONPlaceholder][Fks]
   - Some dumb images from [Lorempixel][Lpx]
  

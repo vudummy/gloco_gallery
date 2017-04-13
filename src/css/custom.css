@@ -3,9 +3,46 @@ body {
 }
 
 .gallery {
-  margin-top: 6rem;
+  margin-top: 2rem;
 }
 
 .header a {
   font-family: 'Josefin Sans', sans-serif;
+}
+
+.column {
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+.bgwhite {
+  background-color: white;
+}
+
+.sticky-trailing {
+  animation: sticky .2s linear forwards;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: rgba(255, 255, 255, .98);
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.57);
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.57);
+}
+
+.rotate {
+  animation: rotate .2s linear .3s forwards;
+}
+
+@keyframes sticky {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes rotate {
+  from { }
+  to { 
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+   }
 }

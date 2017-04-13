@@ -1,8 +1,10 @@
 import React from 'react'
 import fetch from 'isomorphic-fetch'
 import InfiniteScroll from 'react-infinite-scroller'
+import { StickyContainer } from 'react-sticky'
 import Header from './Header'
 import Gallery from './Gallery'
+import Stickybar from '../components/Stickybar'
 import spinner from '../css/balls.svg'
 
 export default class App extends React.Component {
@@ -49,8 +51,9 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <StickyContainer>
         <Header />
+        <Stickybar />
         <InfiniteScroll
           pageStart={0}
           initialLoad={false}
@@ -62,7 +65,7 @@ export default class App extends React.Component {
         >
           <Gallery photos={this.state.photos} />
         </InfiniteScroll>  
-      </div>
+      </StickyContainer>
     )
   }
 }

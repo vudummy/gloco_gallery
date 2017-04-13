@@ -7,6 +7,7 @@ class ImageBox extends React.Component {
   }
 
   imgLoaded = () => this.setState({ loaded: true })
+
   imgError = () => this.setState({ loaded: true, error: 'This is Apple-Map bad!' })
 
   render() {
@@ -18,7 +19,7 @@ class ImageBox extends React.Component {
       height: loaded ? '100%' : '0'
     }
     return (
-      <div className={`ui ${image.id % 3 === 0 ? 'fade' : `move ${image.id % 4 === 0 ? 'right' : 'up'}`} reveal clipped`} style={style}>
+      <div className={`ui ${image.id % 3 === 0 ? 'fade' : `move ${image.id % 4 === 0 ? 'right' : 'up'}`} reveal`} style={style}>
         <div className="visible content">
           <img
             src="http://lorempixel.com/g/600/600"

@@ -7,10 +7,5 @@ body {
 }
 
 .header a {
-  font-family: 'Work Sans', sans-serif;
-}
-
-.clipped {
-  -webkit-clip-path: polygon(0 0, 100% 13%, 100% 99%, 0 879%);
-  clip-path: polygon(0 0, 100% 13%, 100% 99%, 0 87%);
+  font-family: 'Josefin Sans', sans-serif;
 }

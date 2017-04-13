@@ -7,7 +7,7 @@ export default class Header extends React.Component {
       <div className="ui header menu fixed">
         <a className="item borderless" onClick={this.scrollToTop}>
           <i className="cube icon" />
-          <div className="title">GALLERY OF DOOM</div>
+          <div className="title">Gallery of Doom</div>
         </a>
       </div>
     )

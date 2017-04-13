@@ -55,7 +55,7 @@ export default class App extends React.Component {
           loadMore={this.loadMoreImg.bind(this)}
           hasMore={this.state.hasMore}
           loader={this.loader()}
-          threshold={5}
+          threshold={10}
           className="ui gallery main container"
         >
           <Gallery photos={this.state.photos} />

@@ -1,17 +1,17 @@
 import React from 'react'
 
-const Header = () => (
-  <div className="ui header stackable menu fixed">
-    <a className="item borderless">
-      <i className="grey spy icon" />
-      <div className="grey title">
-        {"G L O C O </> D E M O"}
+export default class Header extends React.Component {
+  scrollToTop = () => document.location.href = "#top"
+  render() {
+    return (
+      <div className="ui header stackable menu fixed">
+        <div className2="ui horizontal list">
+          <a className="item borderless" onClick={this.scrollToTop}>
+            <i className="grey cube icon" />
+            <div className="grey title">GALLERY OF DOOM</div>
+          </a>
+        </div>
       </div>
-    </a>
-    <a className="item borderless">
-      <i className="grey cube icon" />
-    </a>
-  </div>
-)
-
-export default Header
+    )
+  }
+}

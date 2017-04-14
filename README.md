@@ -19,7 +19,7 @@ Open package.json for details.
 ## Installation
 Nothing special, just the usual routine:
 ```sh
-$ git clone https://github.com/vutran1710/doom_gallery
+$ git clone https://github.com/vutran1710/gallery_demo
 $ cd doom_gallery
 $ yarn
 $ yarn start

@@ -1,12 +1,8 @@
 import React from 'react'
 import fetch from 'isomorphic-fetch'
-import InfiniteScroll from 'react-infinite-scroller'
-import { StickyContainer } from 'react-sticky'
 import Header from './Header'
-import Gallery from './Gallery'
 import GalleryModal from './GalleryModal'
-import Stickybar from '../components/Stickybar'
-import spinner from '../css/balls.svg'
+import HeadBar from '../components/HeadBar'
 
 export default class App extends React.Component {
   constructor() {
@@ -15,7 +11,6 @@ export default class App extends React.Component {
   }
 
   loadMoreImg = () => {
-    console.log('Call fetch')
     const { photos, keepLoading } = this.state
     const { length } = photos
     if (!keepLoading) return
@@ -28,17 +23,11 @@ export default class App extends React.Component {
             photos: photos.concat(nextSetOfImg).slice(0, 105),
             hasMore: !(length > 104),
           })
-          setTimeout(() => this.setState({ keepLoading: true }), nextSetOfImg.length * 100)
+          setTimeout(() => this.setState({ keepLoading: true }), nextSetOfImg.length * 120)
         }
       )
     ).catch(console.error)
   }
-
-  loader = () => (
-    <div className="ui container fluid">
-      <img src={spinner} className="ui centered small image"/>
-    </div>
-  )
 
   openModal = () => {
     this.setState({ modalIsOpen: true })
@@ -52,9 +41,9 @@ export default class App extends React.Component {
     const { photos, hasMore, modalIsOpen } = this.state
     const pageStart = Math.floor(photos.length / 25)
     return (
-      <StickyContainer>
+      <div>
         <Header />
-        <Stickybar demonstrate={this.openModal} />
+        <HeadBar demonstrate={this.openModal} />
         <GalleryModal
           photos={photos}  
           modalIsOpen={modalIsOpen}
@@ -63,7 +52,7 @@ export default class App extends React.Component {
           hasMore={hasMore}
           pageStart={pageStart}
         />
-      </StickyContainer>
+      </div>
     )
   }
 }

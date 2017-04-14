@@ -9,7 +9,7 @@ This sample is built and bundled from ground up with following tech stacks and d
   - Webpack 2, manually configured from ground up.
   - Semantic-ui
   - A third-lib called [React-infinite-scroller][RIS] by CassetteRocks
-  - Another lib called [React-sticky][Rsk] to create skicky toolbar
+  - Another lib called [React-modal][Rsk] to create Modal
   - Fake RestAPI from [JSONPlaceholder][Fks]
   - Some dumb images from [Lorempixel][Lpx]
  
@@ -69,5 +69,5 @@ MIT
    [Fks]: <https://jsonplaceholder.typicode.com/>
    [Lpx]: <http://lorempixel.com/>
    [RIS]: <https://github.com/CassetteRocks/react-infinite-scroller/>
-   [Rsk]: <https://github.com/captivationsoftware/react-sticky/>
+   [Rsk]: <https://github.com/reactjs/react-modal/>
    >

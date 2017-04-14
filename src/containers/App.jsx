@@ -4,27 +4,18 @@ import InfiniteScroll from 'react-infinite-scroller'
 import { StickyContainer } from 'react-sticky'
 import Header from './Header'
 import Gallery from './Gallery'
+import GalleryModal from './GalleryModal'
 import Stickybar from '../components/Stickybar'
 import spinner from '../css/balls.svg'
 
 export default class App extends React.Component {
   constructor() {
     super()
-    this.state = { photos: [], hasMore: true, keepLoading: false }
+    this.state = { photos: [], hasMore: true, keepLoading: true, modalIsOpen: false }
   }
 
-  componentDidMount() {
-    fetch('http://jsonplaceholder.typicode.com/photos', { method: 'get' }).then(
-      response => response.json().then(
-        result => {
-          this.setState({ photos: result.slice(0, 25) })
-          setTimeout(() => this.setState({ keepLoading: true }), 2500)
-        }
-      )
-    ).catch(console.error)
-  }
-
-  loadMoreImg() {
+  loadMoreImg = () => {
+    console.log('Call fetch')
     const { photos, keepLoading } = this.state
     const { length } = photos
     if (!keepLoading) return
@@ -49,22 +40,29 @@ export default class App extends React.Component {
     </div>
   )
 
+  openModal = () => {
+    this.setState({ modalIsOpen: true })
+  }
+
+  closeModal = () => {
+    this.setState({ modalIsOpen: false })
+  }
+
   render() {
+    const { photos, hasMore, modalIsOpen } = this.state
+    const pageStart = Math.floor(photos.length / 25)
     return (
       <StickyContainer>
         <Header />
-        <Stickybar />
-        <InfiniteScroll
-          pageStart={0}
-          initialLoad={false}
-          loadMore={this.loadMoreImg.bind(this)}
-          hasMore={this.state.hasMore}
-          loader={this.loader()}
-          threshold={10}
-          className="ui gallery main container"
-        >
-          <Gallery photos={this.state.photos} />
-        </InfiniteScroll>  
+        <Stickybar demonstrate={this.openModal} />
+        <GalleryModal
+          photos={photos}  
+          modalIsOpen={modalIsOpen}
+          closeModal={this.closeModal}
+          loadMore={this.loadMoreImg}
+          hasMore={hasMore}
+          pageStart={pageStart}
+        />
       </StickyContainer>
     )
   }

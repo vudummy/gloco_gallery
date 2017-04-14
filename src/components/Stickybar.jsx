@@ -20,7 +20,7 @@ export default class Stickybar extends React.Component {
         onStickyStateChange={this.onStickyStateChange}
       >
         <div className="ui secondary menu column">
-          <div className="active item">Demonstration</div>
+          <a className="ui button" onClick={this.props.demonstrate}>Demonstration</a>
           <a className="item">Info</a>
           <a className="item">Codebase</a>
           <div className="right menu">

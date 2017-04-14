@@ -20,7 +20,7 @@ Open package.json for details.
 Nothing special, just the usual routine:
 ```sh
 $ git clone https://github.com/vutran1710/gallery_demo
-$ cd doom_gallery
+$ cd gallery_demo
 $ yarn
 $ yarn start
 ```
